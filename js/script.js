@@ -1,12 +1,3 @@
-/*!
-* Start Bootstrap - Freelancer v7.0.7 (https://startbootstrap.com/theme/freelancer)
-* Copyright 2013-2023 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-freelancer/blob/master/LICENSE)
-*/
-//
-// Scripts
-// 
-
 window.addEventListener('DOMContentLoaded', event => {
 
     // Navbar shrink function
@@ -20,7 +11,6 @@ window.addEventListener('DOMContentLoaded', event => {
         } else {
             navbarCollapsible.classList.add('navbar-shrink')
         }
-
     };
 
     // Shrink the navbar 
@@ -36,7 +26,7 @@ window.addEventListener('DOMContentLoaded', event => {
             target: '#mainNav',
             rootMargin: '0px 0px -40%',
         });
-    };
+    }
 
     // Collapse responsive navbar when toggler is visible
     const navbarToggler = document.body.querySelector('.navbar-toggler');
@@ -50,5 +40,49 @@ window.addEventListener('DOMContentLoaded', event => {
             }
         });
     });
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+    }
+
+    // Ajoutez le script Bootstrap Validator
+    $('#contactForm').validator().on('submit', function (e) {
+        if (e.isDefaultPrevented()) {
+            // Formulaires non valides
+        } else {
+            // Formulaires valides, traitez le formulaire ici
+            e.preventDefault();
+            // Vous pouvez ajouter une logique d'envoi par AJAX ici
+            submitForm();
+        }
+    });
+
+    function submitForm() {
+        // Récupérez les données du formulaire ici
+        var formData = {
+            nom: $('#fullName').val(),
+            prenom: $('#prenom').val(),
+            tel: $('#phoneNumber').val(),
+            email: $('#email').val(),
+            // Ajoutez d'autres champs si nécessaire
+        };
+
+        // Exemple d'envoi des données du formulaire par AJAX
+        $.ajax({
+            url: '/votre-URL-de-traitement',
+            type: 'POST',
+            data: formData,
+            success: function (response) {
+                // Traitement réussi, affichez une confirmation ou redirigez l'utilisateur
+                console.log(response);
+            },
+            error: function (error) {
+                // Erreur lors de l'envoi des données du formulaire
+                console.error(error);
+            }
+        });
+    }
 
 });
