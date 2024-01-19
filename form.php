@@ -6,8 +6,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $message = $_POST["message"];
 
-    // Envoyer l'e-mail (utilisez la fonction de votre choix pour envoyer l'e-mail)
-    $to = "malikachoubri@gmail.com";
+    // Envoyer l'e-mail 
+    $to = "malikachoubri@gmail.com , mahjoub.bayassine@gmail.com , hanane@digitalfrance.org";
     $subject = "Nouveau message de contact de $fullName";
     $body = "Nom et prénom: $fullName\nTéléphone: $phoneNumber\nEmail: $email\nMessage:\n$message";
 

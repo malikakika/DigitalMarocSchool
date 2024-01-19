@@ -4,9 +4,34 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+.fixed-top-nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Ajout de transition pour une animation fluide */
+}
+
+.scrolled-nav {
+    background-color: black !important;
+    color: white !important;
+}
+
+.scrolled-nav .navbar-nav .nav-item .nav-link {
+    color: white !important;
+}
+
+/* Ajoutez du padding à la section suivante pour compenser la barre de navigation fixe */
+body {
+    padding-top: 56px;
+    /* Ajustez la valeur en fonction de la hauteur de votre barre de navigation */
 }
 
 /* Styles de la barre de navigation */
@@ -52,7 +77,6 @@ body{
 /* Styles pour le bouton Inscription dans la section d'accueil */
 #accueil .btn-success {
     font-size: 1.5rem;
-    /* Ajoutez d'autres styles personnalisés au besoin */
 }
 
 /* Les styles pour le fond restent inchangés */
@@ -129,18 +153,19 @@ h3 {
     color: white;
     background-color: #107717;
 }
-.navbar-nav .nav-item  {
-  margin-left: 10%;
+
+.navbar-nav .nav-item {
+    margin-left: 10%;
 }
 
 #formation {
-    text-align: center; /* Centre le texte dans la section */
+    text-align: center;
 }
 
 .section-title {
     color: #E50014;
     font-size: 2rem;
-    margin-bottom: 20px; /* Espacement sous le titre */
+    margin-bottom: 20px;
 }
 
 
@@ -150,44 +175,121 @@ h3 {
     height: 280px;
 }
 
-.card .card-body .card-title{
+.card .card-body .card-title {
     font-weight: 600;
     font-size: 2rem;
     color: #107717;
     text-transform: uppercase;
 }
-.card .card-body .card-text{
+
+.card .card-body .card-text {
     margin-top: 4%;
 }
 
 
 #myBtn {
-    display: none; /* Hidden by default */
-    position: fixed; /* Fixed/sticky position */
-    bottom: 10px; /* Place the button at the bottom of the page */
-    right: 10px; /* Place the button 30px from the right */
-    z-index: 99; /* Make sure it does not overlap */
-    border: none; /* Remove borders */
-    outline: none; /* Remove outline */
-    background-color: #107717; /* Set a background color */
-    cursor: pointer; /* Add a mouse pointer on hover */
-    border-radius: 50%; /* Rounded corners */
-  }
-  
-  #myBtn:hover {
-    background-color:transparent; /* Add a dark-grey background on hover */
-  }
-/* Ajoutez ces styles pour personnaliser la taille et la couleur du footer */
+    display: none;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #107717;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#myBtn:hover {
+    background-color: transparent;
+}
+
 .footer-custom {
-    color: #107717; /* Couleur du texte du footer */
+    color: #107717;
     margin-top: 20%;
 }
 
 .footer-brand img {
-    width: 50%; /* Taille de l'image du logo dans le footer */
+    width: 50%;
 }
 
-/* Si vous souhaitez personnaliser également la couleur des liens dans la liste */
 .list-inline-item a {
-    color: white; /* Couleur des liens dans le footer */
+    color: white;
+}
+
+
+
+/* Masquer la barre de contrôle */
+video::-webkit-media-controls {
+    display: none !important;
+}
+
+video::-webkit-media-controls-enclosure {
+    display: none !important;
+}
+
+video::-webkit-media-controls-panel {
+    display: none !important;
+}
+
+
+@media (max-width: 992px) {
+    .navbar-brand img {
+        max-width: 50%;
+        margin-left: 0;
+    }
+
+    #accueil .acceuil-title {
+        font-size: 3rem;
+    }
+
+    #accueil .acceuil-subtitle {
+        font-size: 1.5rem;
+    }
+
+    #accueil .btn-success {
+        font-size: 1rem;
+    }
+
+    .background-div {
+        margin: 5%;
+    }
+
+    #mission,
+    #objectifs,
+    #formation,
+    #contact {
+        margin-top: 3%;
+    }
+
+    .equal-image {
+        height: 200px;
+    }
+
+    .card .card-body .card-title {
+        font-size: 1.5rem;
+    }
+
+    .card .card-body .card-text {
+        margin-top: 2%;
+    }
+
+    .footer-custom {
+        margin-top: 10%;
+    }
+
+    .footer-brand img {
+        width: 30%;
+    }
+}
+
+/* Styles supplémentaires pour les écrans encore plus petits */
+@media (max-width: 768px) {
+    .navbar-nav .nav-item {
+        margin-left: 5%;
+    }
+
+    .list-inline-item a {
+        font-size: 0.8rem;
+    }
 }
