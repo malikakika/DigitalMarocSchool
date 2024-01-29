@@ -1,5 +1,4 @@
-window.addEventListener('DOMContentLoaded', event => {
-
+document.addEventListener('DOMContentLoaded', function () {
     // Navbar shrink function
     var navbarShrink = function () {
         const navbarCollapsible = document.body.querySelector('#mainNav');
@@ -13,9 +12,6 @@ window.addEventListener('DOMContentLoaded', event => {
         }
     };
 
-    // Shrink the navbar 
-    navbarShrink();
-
     // Shrink the navbar when page is scrolled
     document.addEventListener('scroll', navbarShrink);
 
@@ -27,6 +23,16 @@ window.addEventListener('DOMContentLoaded', event => {
             rootMargin: '0px 0px -40%',
         });
     }
+
+    // Change navbar color on scroll
+    var nav = document.querySelector('.navbar');
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 50) {
+            nav.classList.add('scrolled-nav');
+        } else {
+            nav.classList.remove('scrolled-nav');
+        }
+    });
 
     // Collapse responsive navbar when toggler is visible
     const navbarToggler = document.body.querySelector('.navbar-toggler');
@@ -54,13 +60,18 @@ document.getElementById('myBtn').addEventListener('click', scrollToTop);
     }
 
     // Ajoutez le script Bootstrap Validator
-    $('#contactForm').validator().on('submit', function (e) {
-        if (e.isDefaultPrevented()) {
-            // Formulaires non valides
-        } else {
-            // Formulaires valides, traitez le formulaire ici
+    $('#contactForm').validator({
+        custom: {
+            // Définissez vos règles de validation personnalisées ici
+        },
+        errors: {
+            delay: 300, // Délai avant l'affichage des messages d'erreur
+            custom: 'Une erreur est survenue lors de la validation du formulaire.', // Message générique en cas d'erreur
+            pattern: 'La valeur de ce champ est incorrecte.', // Message générique pour les champs pattern
+        },
+    }).on('submit', function (e) {
+        if (!e.isDefaultPrevented()) {
             e.preventDefault();
-            // Vous pouvez ajouter une logique d'envoi par AJAX ici
             submitForm();
         }
     });
@@ -82,24 +93,57 @@ document.getElementById('contactForm').addEventListener('submit', function (even
         // Récupérez les données du formulaire ici
         var formData = {
             nom: $('#fullName').val(),
-            prenom: $('#prenom').val(),
             tel: $('#phoneNumber').val(),
             email: $('#email').val(),
+            message: $('#message').val(),
             // Ajoutez d'autres champs si nécessaire
         };
 
         // Exemple d'envoi des données du formulaire par AJAX
         $.ajax({
-            url: '/votre-URL-de-traitement',
+            url: 'form.php', // Utilisez le chemin correct vers votre script de traitement PHP
             type: 'POST',
             data: formData,
             success: function (response) {
                 // Traitement réussi, affichez une confirmation ou redirigez l'utilisateur
                 console.log(response);
+
+                // Afficher une notification SweetAlert2
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Email envoyé avec succès!',
+                    text: 'Nous vous répondrons dès que possible.',
+                    background: 'white',  // Couleur de fond
+                    confirmButtonColor: '#107717',  // Couleur du bouton de confirmation
+                    confirmButtonText: 'OK',  // Texte du bouton de confirmation
+                    customClass: {
+                        title: 'my-swal-title',  // Classe CSS pour le titre
+                        content: 'my-swal-content',  // Classe CSS pour le contenu
+                        confirmButton: 'my-swal-confirm-button',  // Classe CSS pour le bouton de confirmation
+                    },
+                });
+
+                // Réinitialiser le formulaire après l'envoi réussi
+                $('#contactForm')[0].reset();
             },
             error: function (error) {
                 // Erreur lors de l'envoi des données du formulaire
                 console.error(error);
+
+                // Afficher une notification SweetAlert2 pour l'échec
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erreur lors de l\'envoi de l\'email',
+                    text: 'Veuillez réessayer plus tard.',
+                    background: '#white',  // Couleur de fond
+                    confirmButtonColor: '#107717',  // Couleur du bouton de confirmation
+                    confirmButtonText: 'OK',  // Texte du bouton de confirmation
+                    customClass: {
+                        title: 'my-swal-title',  // Classe CSS pour le titre
+                        content: 'my-swal-content',  // Classe CSS pour le contenu
+                        confirmButton: 'my-swal-confirm-button',  // Classe CSS pour le bouton de confirmation
+                    },
+                });
             }
         });
     }

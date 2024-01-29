@@ -7,6 +7,9 @@
     <title>Digital Maroc School</title>
     <link rel="icon" href="assets/img/logo_digitalMaroc.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
 
     <!-- Inclusion du fichier CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -15,7 +18,7 @@
 <body>
 
     <!-- Barre de navigation -->
-    <nav class="navbar navbar-expand-md">
+    <nav class="navbar navbar-expand-md fixed-top-nav">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="assets/img/logo_digitalMaroc.png" alt="Logo Digital Maroc">
@@ -87,10 +90,7 @@
         <div class="row">
             <!-- Colonne pour la vidéo -->
             <div class="col-md-6">
-                <video width="100%" height="auto" controls>
-                    <source src="assets/vid/introduction.mp4" type="video/mp4">
-                    Votre navigateur ne prend pas en charge la balise vidéo.
-                </video>
+                <img src="assets/img/photodeGroupe.JPG" alt="Photo de Groupe" style="width: 100%;">
             </div>
 
             <!-- Colonne pour le texte -->
@@ -137,7 +137,7 @@
         </div>
     </section>
 
-        <!-- Section formations-->
+    <!-- Section formations-->
 
     <section id="formation" class="container">
         <h3 style="color: #E50014;">Nos Formations</h3>
@@ -223,34 +223,35 @@
         <div class="container">
             <div class="row">
                 <!-- Colonne pour le formulaire -->
-                <div class="col-md-4">
-                    <form id="contactForm" action="form.php" method="post" class="mx-auto" novalidate>
+                <div class="col-md-6">
+                    <form id="contactForm" action="form.php" method="post" class="mx-auto" data-toggle="validator"
+                        novalidate>
                         <div class="mb-3">
                             <label for="fullName" class="form-label">Nom et Prénom</label>
                             <input type="text" class="form-control" id="fullName" name="fullName" required>
-                            <div class="invalid-feedback">Veuillez entrer votre nom et prénom.</div>
+                            <div class="help-block with-errors"></div>
                         </div>
                         <div class="mb-3">
                             <label for="phoneNumber" class="form-label">Numéro de téléphone</label>
                             <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" required>
-                            <div class="invalid-feedback">Veuillez entrer un numéro de téléphone valide.</div>
+                            <div class="help-block with-errors"></div>
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
                             <input type="email" class="form-control" id="email" name="email" required>
-                            <div class="invalid-feedback">Veuillez entrer une adresse email valide.</div>
+                            <div class="help-block with-errors"></div>
                         </div>
                         <div class="mb-3">
                             <label for="message" class="form-label">Message</label>
                             <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
-                            <div class="invalid-feedback">Veuillez entrer votre message.</div>
+                            <div class="help-block with-errors"></div>
                         </div>
                         <button type="submit" class="btn btn-success">Envoyer</button>
                     </form>
                 </div>
 
                 <!-- Colonne pour la map -->
-                <div class="col-md-8">
+                <div class="col-md-6">
                     <div class="container" align="center" top="50">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3440.349517819554!2d-9.577436424644!3d30.42619230038331!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdb3b7ec814f2757%3A0x6b7801a8a6256762!2sDAR%20MOMKIN!5e0!3m2!1sfr!2stn!4v1699060906470!5m2!1sfr!2stn"
@@ -262,6 +263,18 @@
             </div>
         </div>
     </section>
+    <br> <br>
+    <div class="container">
+        <div class="row">
+            <!-- Colonne pour les icônes des réseaux sociaux -->
+            <div class="col-md-12 d-flex justify-content-center text-center">
+                <img src="assets/img/partenaires.png" alt="image" style="width: 50%;" class="mx-auto">
+            </div>
+        </div>
+    </div>
+    <br> <br>
+
+
 
     <section id="partenaire">
     
@@ -283,33 +296,63 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-validator@0.11.9/dist/validator.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+
     <script src="js/script.js"></script>
 
 
     <!-- Footer -->
-    <footer  class="footer-custom mt-auto py-3" >
+    <footer class="footer-custom mt-auto py-3">
         <div class="container">
-            <div class="row">
-                <div class="col-md-3">
+            <div class="row align-items-end">
+                <div class="col-md-2">
                     <a class="footer-brand" href="#">
                         <img src="assets/img/logo_digitalMaroc.png" alt="Logo Digital Maroc" style="width:50%">
                     </a>
                 </div>
-                <div class="col-md-3">
-                    <p >&copy; 2023 Digital Maroc School. Tous droits réservés.</p>
-                </div>
-                <div class="col-md-6 text-md-end">
+
+                <div class="col-md-10 text-md-end">
                     <ul class="list-inline">
-                        <li class="list-inline-item"><a href=""><img src="assets/img/instagram.png" style="width: 20px; height: 20px;" alt="Instagram"></a></li>
-                        <li class="list-inline-item"><a href="#"><img src="assets/img/facebook.png" style="width: 20px; height: 20px;" alt="Facebook"></a></li>
-                        <li class="list-inline-item"><a href="#"><img src="assets/img/linkedin.png" style="width: 20px; height: 20px;" alt="LinkedIn"></a></li>
-                        <li class="list-inline-item"><a href="#"><img src="assets/img/whatsapp.png" style="width: 20px; height: 20px;" alt="LinkedIn"></a></li>
+                        <li class="list-inline-item"><a
+                                href="https://www.facebook.com/people/Mahjoub-Bayassine/100063628867797/"
+                                target="_blank"><img src="assets/img/facebook.png" style="width: 30px; height: 30px;"
+                                    alt="Facebook"></a></li>
+                        <li class="list-inline-item"><a href="https://www.instagram.com" target="_blank"><img
+                                    src="assets/img/instagram.png" style="width: 30px; height: 30px;"
+                                    alt="Instagram"></a></li>
+                        <li class="list-inline-item"><a href="https://www.linkedin.com/in/mahjoub-bayassine-1b3439159/"
+                                target="_blank"><img src="assets/img/linkedin.png" style="width: 30px; height: 30px;"
+                                    alt="LinkedIn"></a></li>
+                        <li class="list-inline-item"><a href="https://wa.me/+33656668868 " target="_blank"><img
+                                    src="assets/img/whatsapp.png" style="width: 30px; height: 30px;" alt="WhatsApp"></a>
+                        </li>
+                        <li class="list-inline-item"><a href="mailto:Hanane@digitalfrance.org" target="_blank"><img
+                                    src="assets/img/gmail.png" style="width: 30px; height: 30px;" alt="gmail"></a></li>
+                        <li class="list-inline-item"><a href="https://twitter.com/mbayassine" target="_blank"><img
+                                    src="assets/img/twitter.png" style="width: 30px; height: 30px;" alt="twitter"></a>
+                        </li>
+                        <li class="list-inline-item"><a href="https://www.youtube.com/@digitalfranceschool"
+                                target="_blank"><img src="assets/img/youtube.png" style="width: 30px; height: 30px;"
+                                    alt="twitter"></a></li>
 
                     </ul>
                 </div>
             </div>
         </div>
+        <div class="container">
+            <div class="row align-items-end">
+                <div class="col-md-12">
+                    <p style="text-align: center; font-size: 0.5rem;">&copy; 2023 Digital Maroc School. Tous droits
+                        réservés.</p>
+                </div>
+            </div>
+        </div>
+
+
     </footer>
+
+    <!-- Flèche pour remonter en haut -->
+    <button onclick="topFunction()" id="scrollTop" title="Go to top"><img src="assets/img/goToTop.png"></button>
 </body>
 
 </html>
