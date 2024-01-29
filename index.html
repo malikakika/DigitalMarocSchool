@@ -25,7 +25,6 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <!-- Liens de navigation -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
@@ -41,6 +40,9 @@
                         <a class="nav-link" href="#formation">Formations</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="#presse">Presse</a>
+                        </li>
+                        <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
                     </li>
                 </ul>
@@ -57,12 +59,29 @@
 
         <h1 class="acceuil-title">Digital Maroc School</h1>
         <h2 class="acceuil-subtitle">Le digital pour tous</h2>
+            <p class="acceuil-info" id="typing-text">Formation 100% gratuite | Intervenants professionnels | Formations de qualités
+                |
+                Accessible à tous</p>
+
         <a href="https://docs.google.com/forms/d/12mOgRwOFyvqVYdwPsppKRJmKoma-K5Jz4q0sFfE5kQg/viewform?edit_requested=true"
             target="_blank" class="btn btn-success">Inscription</a>
     </section>
+        <section id="mission" class="container mt-5">
 
+<div class="container mt-5">
+    <h3 style="color: #E50014;">Contexte pays </h3>
+    <p class="mission">Aujourd'hui, tout est digitalisé, et l'information au numérique n'est plus une mode mais une
+        nécessité. Notre
+        ADN, c'est
+        le digital au Maroc et de former des jeunes ou des moins jeunes qui n'ont pas les moyens ou qui ont quitté le
+        système
+        scolaire. Ainsi, l'information est accessible à tout le monde, que ce soit des jeunes de 15 à 17 ans jusqu'à 45
+        ans, des
+        femmes, ou des personnes en situation de handicap. </p>
+    <h2>Digital Pour la Culture, le Sport, l'Education et la Formation
+    </h2>
+</div>
     <!-- Section de mission -->
-    <section id="mission" class="container mt-5">
         <h3 style="color: #E50014;">Notre Mission</h3>
 
         <div class="row">
@@ -95,7 +114,7 @@
         <h3 style="color: #E50014;">Nos Objectifs</h3>
 
         <div class="row">
-            <div class="col-lg-12 ms-auto"
+            <div class="col-md-6 "
                 style="background-image: url(assets/img/star.png);background-size: contain; background-position: center; background-repeat: no-repeat;">
                 <p class="lead">Digital France School, en collaboration avec la Wilaya Souss Massa et d'autres acteurs
                     économiques régionaux, a travaillé sur un programme d'innovation appelé Digital Maroc School. Ce
@@ -111,6 +130,9 @@
                     solidaire, responsable et inclusif, en ciblant spécifiquement les personnes vulnérables des
                     quartiers populaires, sans diplômes et sans emploi.
                 </p>
+            </div>
+            <div class="col-md-6">
+                <img src="assets/img/groupe.png">
             </div>
         </div>
     </section>
@@ -152,6 +174,48 @@
             </div>
         </div>
     </section>
+<!-- Section Revue de Presse -->
+<section id="presse" class="container mt-5">
+    <h3 style="color: #E50014;">Revue de Presse</h3>
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Consultez ce que la presse dit sur nous :</h2>
+
+            <!-- Images cliquables vers les articles -->
+            <a href="https://www.challenge.ma/agadir-inaugure-la-digital-maroc-school-274178/" target="_blank"
+                class="presse-item">
+                <img src="assets/img/challenge.png" alt="Challenge.ma" class="presse-thumbnail">
+                <div class="overlay">Lire plus</div>
+            </a>
+
+            <a href="https://www.leconomiste.com/flash-infos/agadir-inaugure-la-digital-maroc-school" target="_blank"
+                class="presse-item">
+                <img src="assets/img/economiste.png" alt="L'Economiste" class="presse-thumbnail">
+                <div class="overlay">Lire plus</div>
+            </a>
+
+            <a href="https://barlamantoday.com/2023/12/29/agadir-hosts-digital-maroc-school" target="_blank"
+                class="presse-item">
+                <img src="assets/img/barlamane.png" alt="Barlamane Today" class="presse-thumbnail">
+                <div class="overlay">Lire plus</div>
+            </a>
+            <a href="https://www.mapphoto.ma/produit/cycle-de-formation-aux-metiers-du-digital-au-profit-des-jeunes-1/"
+                target="_blank" class="presse-item">
+                <img src="assets/img/map.png" alt="Barlamane Today" class="presse-thumbnail">
+                <div class="overlay">Lire plus</div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=1cIvAWeC3hc" target="_blank" class="presse-item">
+                <img src="assets/img/m24.png" alt="Barlamane Today" class="presse-thumbnail">
+                <div class="overlay">Lire plus</div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=iH83PKmP5AU" target="_blank" class="presse-item">
+                <img src="assets/img/2m.png" alt="Barlamane Today" class="presse-thumbnail">
+                <div class="overlay">Lire plus</div>
+            </a>
+        </div>
+    </div>
+</section>
+
     <!-- Section contact -->
 
     <section id="contact" class="container mt-5">
@@ -160,7 +224,7 @@
             <div class="row">
                 <!-- Colonne pour le formulaire -->
                 <div class="col-md-4">
-                    <form id="contactForm" action="form.php" method="post" class="mx-auto ">
+                    <form id="contactForm" action="form.php" method="post" class="mx-auto" novalidate>
                         <div class="mb-3">
                             <label for="fullName" class="form-label">Nom et Prénom</label>
                             <input type="text" class="form-control" id="fullName" name="fullName" required>
@@ -188,14 +252,28 @@
                 <!-- Colonne pour la map -->
                 <div class="col-md-8">
                     <div class="container" align="center" top="50">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3440.349517819554!2d-9.577436424644!3d30.42619230038331!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdb3b7ec814f2757%3A0x6b7801a8a6256762!2sDAR%20MOMKIN!5e0!3m2!1sfr!2stn!4v1699060906470!5m2!1sfr!2stn"
-                            width="75%" height="480" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3440.349517819554!2d-9.577436424644!3d30.42619230038331!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdb3b7ec814f2757%3A0x6b7801a8a6256762!2sDAR%20MOMKIN!5e0!3m2!1sfr!2stn!4v1699060906470!5m2!1sfr!2stn"
+                        width="75%" height="480" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                        tabindex="0"></iframe>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+
+    <section id="partenaire">
+    
+        <h3>Nos Partenaires</h3>
+        <div class="image-container">
+            <img class="center" src="assets/img/logo_digitalMaroc.png">
+            <img class="rotate-float" src="assets/img/INDH2.jpg">
+            <img class="rotate-float" src="assets/img/Logo Dar Momkin.jpg">
+            <img class="rotate-float" src="assets/img/Logo Indh.jpg">
+            <img class="rotate-float" src="assets/img/Logo Wilaya Agadir .jpg">
+            <img class="rotate-float" src="assets/img/logocarré (1).png">
+    
     </section>
 
     <!-- Flèche pour remonter en haut -->

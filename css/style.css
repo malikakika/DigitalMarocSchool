@@ -1,12 +1,12 @@
-/* Reset des marges et des rembourrages pour assurer la cohérence sur différents navigateurs */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
+    overflow-x: hidden;
 }
 
 /* Styles de la barre de navigation */
@@ -20,7 +20,6 @@ body{
     margin-left: 5%;
 }
 
-/* Styles de la section d'accueil */
 .background-div {
     margin: 10%;
     background-repeat: no-repeat;
@@ -38,34 +37,59 @@ body{
     margin-top: 10%;
 }
 
-/* Ajout de styles spécifiques pour la section d'accueil */
 #accueil .acceuil-title {
     font-size: 5rem;
     color: #107717;
+    animation: fadeInDown 1.5s ease-out;
 }
 
 #accueil .acceuil-subtitle {
     font-size: 2.5rem;
     color: #E50014;
+    animation: fadeInUp 1.5s ease-out;
 }
 
-/* Styles pour le bouton Inscription dans la section d'accueil */
 #accueil .btn-success {
     font-size: 1.5rem;
-    /* Ajoutez d'autres styles personnalisés au besoin */
+    animation: pulse 1.5s infinite;
 }
 
-/* Les styles pour le fond restent inchangés */
-.background-div {
-    margin: 10%;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 #background-video {
@@ -78,8 +102,6 @@ body{
     object-fit: cover;
 }
 
-
-/* Styles de la section de mission */
 #mission {
     margin-top: 5%;
 }
@@ -91,14 +113,13 @@ body{
     line-height: 2;
 }
 
-/* Styles de la section d'objectifs */
 #objectifs {
     margin-top: 5%;
 }
 
 h3 {
     text-align: center;
-    color: red;
+    color: #E50014;
     font-size: 3rem;
     font-weight: 600;
 }
@@ -109,7 +130,6 @@ h3 {
     font-weight: 500;
 }
 
-/* Styles pour la vidéo de fond */
 #background-video {
     position: absolute;
     top: 0;
@@ -120,7 +140,6 @@ h3 {
     object-fit: cover;
 }
 
-/* Styles pour les liens de navigation */
 .navbar-nav .nav-item .nav-link {
     color: black;
 }
@@ -129,65 +148,186 @@ h3 {
     color: white;
     background-color: #107717;
 }
-.navbar-nav .nav-item  {
-  margin-left: 10%;
+.navbar-nav .nav-item {
+    margin-left: 2%;
 }
 
 #formation {
-    text-align: center; /* Centre le texte dans la section */
+    text-align: center;
 }
 
 .section-title {
     color: #E50014;
     font-size: 2rem;
-    margin-bottom: 20px; /* Espacement sous le titre */
+    margin-bottom: 20px;
 }
-
-
 
 .equal-image {
     width: 100%;
     height: 280px;
 }
 
-.card .card-body .card-title{
+.card .card-body .card-title {
     font-weight: 600;
     font-size: 2rem;
     color: #107717;
     text-transform: uppercase;
 }
-.card .card-body .card-text{
+.card .card-body .card-text {
     margin-top: 4%;
 }
 
-
 #myBtn {
-    display: none; /* Hidden by default */
-    position: fixed; /* Fixed/sticky position */
-    bottom: 10px; /* Place the button at the bottom of the page */
-    right: 10px; /* Place the button 30px from the right */
-    z-index: 99; /* Make sure it does not overlap */
-    border: none; /* Remove borders */
-    outline: none; /* Remove outline */
-    background-color: #107717; /* Set a background color */
-    cursor: pointer; /* Add a mouse pointer on hover */
-    border-radius: 50%; /* Rounded corners */
-  }
-  
-  #myBtn:hover {
-    background-color:transparent; /* Add a dark-grey background on hover */
-  }
-/* Ajoutez ces styles pour personnaliser la taille et la couleur du footer */
+    display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Fixed/sticky position */
+        bottom: 10px;
+        /* Place the button at the bottom of the page */
+        right: 10px;
+        /* Place the button 30px from the right */
+        z-index: 99;
+        /* Make sure it does not overlap */
+        border: none;
+        /* Remove borders */
+        outline: none;
+        /* Remove outline */
+        background-color: #107717;
+        cursor: pointer;
+        border-radius: 50%;
+    }
+    
+    #myBtn:hover {
+    background-color: transparent;
+    }
+
 .footer-custom {
-    color: #107717; /* Couleur du texte du footer */
+    color: #107717;
     margin-top: 20%;
 }
 
 .footer-brand img {
-    width: 50%; /* Taille de l'image du logo dans le footer */
+    width: 50%;
 }
 
-/* Si vous souhaitez personnaliser également la couleur des liens dans la liste */
 .list-inline-item a {
-    color: white; /* Couleur des liens dans le footer */
-}
+    color: white;
+    }
+    
+    .navbar-nav a {
+        transition: color 0.3s ease-in-out;
+    }
+    
+    .navbar-nav a:hover {
+        color: #E50014;
+    }
+    
+    .card:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    #accueil .acceuil-info {
+        font-size: 1.2rem;
+        font-weight: bolder;
+        color: #107717;
+        text-align: center;
+        margin-top: 20px;
+        animation: fadeInUp 1.5s ease-out;
+    }
+    
+    
+    .presse-thumbnail:hover {
+        transform: scale(1.1);
+    }
+    
+    /* Ajoutez ce CSS pour styliser les images et le texte "Lire plus" */
+    .presse-item {
+        display: inline-block;
+        position: relative;
+        margin: 10px;
+        text-decoration: none;
+    }
+    
+    .presse-thumbnail {
+        width: 320px;
+        /* Ajustez la largeur selon vos besoins */
+        height: 300px;
+        border: 1px solid #ccc;
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .presse-item:hover .presse-thumbnail {
+        transform: scale(1.1);
+    }
+    
+    .overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 10px;
+        display: none;
+    }
+    
+    .presse-item:hover .overlay {
+        display: block;
+    }
+    
+    
+    
+    #partenaire {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+    }
+    
+    .image-container {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    
+    #partenaire img {
+        position: absolute;
+        transform: translate(-50%, -50%);
+    }
+    
+    #partenaire img.center {
+        width: 100px;
+    }
+    
+    #partenaire img:not(.center) {
+        width: 150px;
+        height: auto;
+        transform-origin: 100% 50%;
+    }
+    
+    #partenaire img:nth-child(2) {
+        transform: translate(-50%, -50%) rotate(10deg) translateX(200px) rotate(-10deg);
+    }
+    
+    
+    #partenaire img:nth-child(3) {
+        transform: translate(-50%, -50%) rotate(150deg) translateX(200px) rotate(-150deg);
+    }
+    
+    #partenaire img:nth-child(4) {
+        transform: translate(-50%, -50%) rotate(200deg) translateX(200px) rotate(-200deg);
+    }
+    
+    #partenaire img:nth-child(5) {
+        transform: translate(-50%, -50%) rotate(250deg) translateX(200px) rotate(-250deg);
+    }
+    
+    #partenaire img:nth-child(6) {
+        transform: translate(-50%, -50%) rotate(300deg) translateX(200px) rotate(-300deg);
+    }
+
+  #partenaire img:nth-child(7) {
+      transform: translate(-50%, -50%) rotate(360deg) translateX(200px) rotate(-360deg);
+  }

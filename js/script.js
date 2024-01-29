@@ -41,6 +41,12 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
+    function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+document.getElementById('myBtn').addEventListener('click', scrollToTop);
+
     // When the user clicks on the button, scroll to the top of the document
     function topFunction() {
         document.body.scrollTop = 0; // For Safari
@@ -59,6 +65,19 @@ window.addEventListener('DOMContentLoaded', event => {
         }
     });
 
+
+    function validateForm() {
+    validator.validate(document.getElementById('contactForm'));
+}
+
+document.getElementById('contactForm').addEventListener('submit', function (event) {
+    if (!this.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+    }
+
+    validateForm();
+});
     function submitForm() {
         // Récupérez les données du formulaire ici
         var formData = {
@@ -84,5 +103,30 @@ window.addEventListener('DOMContentLoaded', event => {
             }
         });
     }
+
+    
+
+});
+document.addEventListener('DOMContentLoaded', function() {
+    const text = document.getElementById('typing-text').textContent;
+    document.getElementById('typing-text').textContent = '';
+
+    function type() {
+        let i = 0;
+        return function() {
+            if (i < text.length) {
+                document.getElementById('typing-text').textContent += text.charAt(i);
+                i++;
+            } else {
+                document.getElementById('typing-text').textContent = '';
+                i = 0;
+            }
+        };
+    }
+
+    const typeText = type();
+
+    // Ajustez la vitesse de frappe ici (en millisecondes)
+    const typingInterval = setInterval(typeText, 100);
 
 });
